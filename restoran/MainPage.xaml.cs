@@ -23,5 +23,48 @@ namespace restoran
         {
             InitializeComponent();
         }
+
+
+        private void Table(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Stolik stolik = new Stolik();
+                stolik.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
+        }
+
+        private void Client(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Clients clients = new Clients();
+                clients.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
+        }
+
+        private void Booking(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Booking booking = new Booking();
+                booking.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
+        }
     }
 }

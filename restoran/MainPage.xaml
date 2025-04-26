@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:restoran"
         mc:Ignorable="d"
         Title="MainPage" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#ff8597" Offset="0.0"/>
+            <GradientStop Color="#ffc2cc" Offset="1.0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        
+        <Button Content="Клиенты" HorizontalAlignment="Center" Margin="0,214,0,0" VerticalAlignment="Top" Height="67" Width="144" Click="Client"/>
+        <Button Content="Столики" HorizontalAlignment="Left" Margin="120,214,0,0" VerticalAlignment="Top" Height="67" Width="145" Click="Table"/>
+        <Button Content="Забронировать" HorizontalAlignment="Left" Margin="528,214,0,0" VerticalAlignment="Top" Height="68" Width="145" Click="Booking"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" 
+                   Text="Русс" VerticalAlignment="Top" Height="54" Width="89" FontSize="36" Foreground="White" FontFamily="Sitka Text" />
+        <TextBlock HorizontalAlignment="Left" Margin="86,10,0,0" TextWrapping="Wrap" 
+           Text="кий" VerticalAlignment="Top" Height="54" Width="71" FontSize="36" Foreground="#FF8C0015" FontFamily="Sitka Text"/>
+
     </Grid>
 </Window>

@@ -1,0 +1,50 @@
+﻿<Window x:Class="restoran.Stolik"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:restoran"
+        mc:Ignorable="d"
+        Title="Stolik" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#ff8597" Offset="0.0"/>
+            <GradientStop Color="#ffc2cc" Offset="1.0"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Форма добавления нового столика -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Номер столика:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox x:Name="TableNumberTextBox" Width="100" Height="30" Margin="0,0,10,0"/>
+
+            <TextBlock Text="Вместимость:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox x:Name="CapacityTextBox" Width="100" Height="30" Margin="0,0,10,0"/>
+
+            <Button Content="Добавить столик" Height="30" Width="150" Click="AddTable_Click"/>
+            <Button Content="назад" Height="30" Width="50" Click="Button_Click_1" Margin="165,0,0,0"/>
+        </StackPanel>
+
+        <!-- Таблица столиков -->
+        <DataGrid Grid.Row="1" x:Name="TablesDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Stolik}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Номер столика" Binding="{Binding TableNumber}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Вместимость" Binding="{Binding Capacity}" IsReadOnly="True" Width="*"/>
+                <DataGridTemplateColumn Header="Статус">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                      Checked="StatusChanged" Unchecked="StatusChanged"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

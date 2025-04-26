@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,10 +22,17 @@ namespace restoran
     /// Логика взаимодействия для Booking.xaml
     /// </summary>
     public partial class Booking : Window
+
     {
+        private string connectionString = "Server=localhost;Database=restoran;Trusted_Connection=True;";
         public Booking()
         {
             InitializeComponent();
+        }
+
+        private void Book_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

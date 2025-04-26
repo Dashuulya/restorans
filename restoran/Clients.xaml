@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:restoran"
         mc:Ignorable="d"
-        Title="Clients" Height="450" Width="500">
+        Title="Clients" Height="600" Width="1000">
     <Window.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#ff8597" Offset="0.0"/>
@@ -13,16 +13,21 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300">
+        <Button Content="удалить" HorizontalAlignment="Left" Margin="684,504,0,0" VerticalAlignment="Top" Height="30" Width="120" Click="Button_Click"/>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="300" Margin="10">
             <TextBlock Text="Данные клиента" Margin="0, 5, 0, 15" FontWeight ="Bold" FontSize="14" Foreground="#444" HorizontalAlignment="Center"/>
-            <TextBlock Text="Имя клиента" HorizontalAlignment="Center" FontWeight ="Bold" FontSize="14" Foreground="#444"/>
+            <TextBlock Text="Фамилия" HorizontalAlignment="Center" FontWeight ="Bold" FontSize="14" Foreground="#444"/>
+            <TextBox Text="" Margin="0, 5, 0, 10" Height="35" x:Name="FirstNameTextBox"/>
+            <TextBlock Text="Имя" HorizontalAlignment="Center" FontWeight ="Bold" FontSize="14" Foreground="#444"/>
             <TextBox Margin="0, 5, 0, 10" Height="35" x:Name="LastNameTextBox"/>
-            <TextBlock Text="Фамилия клиента" HorizontalAlignment="Center" FontWeight ="Bold" FontSize="14" Foreground="#444"/>
-            <TextBox Margin="0, 5, 0, 10" Height="35" x:Name="FirstNameTextBox"/>
-            <TextBlock Text="email клиента" HorizontalAlignment="Center" FontWeight ="Bold" FontSize="14" Foreground="#444"/>
+            <TextBlock Text="email " HorizontalAlignment="Center" FontWeight ="Bold" FontSize="14" Foreground="#444"/>
             <TextBox Margin="0, 5, 0, 10" Height="35" x:Name="EmailTextBox"/>
-            <TextBlock Text="phone клиента" HorizontalAlignment="Center" FontWeight ="Bold" FontSize="14" Foreground="#444"/>
+            <TextBlock Text="phone " HorizontalAlignment="Center" FontWeight ="Bold" FontSize="14" Foreground="#444"/>
             <TextBox Margin="0, 5, 0, 10" Height="35" x:Name="PhoneTextBox"/>
+            <TextBlock Text="Дата" HorizontalAlignment="Center" FontWeight ="Bold" FontSize="14" Foreground="#444"/>
+            <TextBox Text="" Margin="0, 5, 0, 10" Height="35" x:Name="DateTextBox"/>
+            <TextBlock Text="Количество людей" HorizontalAlignment="Center" FontWeight ="Bold" FontSize="14" Foreground="#444"/>
+            <TextBox Text="" Margin="0, 5, 0, 10" Height="35" x:Name="CapacityTextBox"/>
             <Button Content="Забронировать"
             Width="120"
             Height="30"
@@ -32,9 +37,12 @@
             HorizontalAlignment="Center"
             Cursor="Hand"
             Margin="0, 10, 0, 0"
-            BorderThickness="0" Click="Button_Click"
+            BorderThickness="0" Click="Booking"
             />
         </StackPanel>
+
+        <DataGrid Margin="0,105,13,155" HorizontalAlignment="Right" x:Name="ClientsDataGrid" Width="544" AutoGenerateColumns="True" />
+        <Button Content="назад" HorizontalAlignment="Left" Margin="399,501,0,0" VerticalAlignment="Top" Height="36" Width="88" Click="Button_Click_1"/>
 
     </Grid>
 </Window>
